@@ -1,11 +1,10 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 const dotenv = require('dotenv');
-dotenv.config();
-module.exports = {
-  username: process.env.userName,
-  password: process.env.Password,
-};
+const path = require('path');
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+// export const userName = process.env.userName || '';
+// export const password = process.env.password || '';
 
 
 /**
